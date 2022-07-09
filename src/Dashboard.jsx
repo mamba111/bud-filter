@@ -25,8 +25,9 @@ const filterTransactions = (by, transactions) => {
         .sort((a, b) => parseInt(a.amount.value, 10) - parseInt(b.amount.value, 10))
         .slice(0, 10)
     }
-    case FILTER_BY.BIGGEST: {
+    case FILTER_BY.EXPENSES: {
       return [...transactions]
+        .filter(a=>parseInt(a.amount.value, 10) <0)
         .sort((b, a) => parseInt(a.amount.value, 10) - parseInt(b.amount.value, 10))
         .slice(0, 10)
     }

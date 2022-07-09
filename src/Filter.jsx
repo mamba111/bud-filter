@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 export const FILTER_BY = {
   ALL: 'ALL',
+  EXPENSES: 'EXPENSES',
   SMALLEST: 'SMALLEST',
-  BIGGEST: 'BIGGEST',
 }
 
 const Wrapper = styled.div`
@@ -47,8 +47,8 @@ export const Filter = ({ onChange }) => (
 
       <Select onChange={onChange}>
         <Option value={FILTER_BY.ALL}>All Transactions</Option>
-        <Option value={FILTER_BY.SMALLEST}>10 Smallest Transactions</Option>
-        <Option value={FILTER_BY.BIGGEST}>10 Biggest Transactions</Option>
+        <Option value={FILTER_BY.EXPENSES}>10 Smallest Expenses</Option>
+        <Option value={FILTER_BY.SMALLEST}>10 Largest Expenses</Option>
       </Select>
     </Flex>
   </Wrapper>
