@@ -4,3 +4,4 @@ src/out.js
 
 cypress/downloads/
 cypress/videos/
+cypress/screenshots/

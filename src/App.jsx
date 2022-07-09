@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { STATUS } from './Api'
 import { FILTER_BY } from './Filter'
-import { Transactions } from './Transactions'
+import { Dashboard } from './Dashboard'
 
 export const App = () => {
   const [filterBy, setFilterBy] = React.useState(FILTER_BY.ALL)
@@ -16,5 +16,5 @@ export const App = () => {
       .catch(() => setData({ status: STATUS.ERROR }))
   }, [])
 
-  return <Transactions data={data} filterBy={filterBy} onChangeFilter={onChangeFilter} />
+  return <Dashboard data={data} filterBy={filterBy} onChangeFilter={onChangeFilter} />
 }

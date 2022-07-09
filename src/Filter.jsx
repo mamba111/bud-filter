@@ -20,12 +20,16 @@ const Select = styled.select`
 `
 
 export const Filter = ({ onChange }) => (
-  <SelectWrapper>
-    <Select onChange={onChange}>
-      <option value={FILTER_BY.ALL}>All Transactions</option>
-      <option value={FILTER_BY.SMALLEST}>10 Smallest Transactions</option>
-      <option value={FILTER_BY.BIGGEST}>10 Biggest Transactions</option>
-    </Select>
-  </SelectWrapper>
+  <>
+    <h2>Transaction History</h2>
+
+    <SelectWrapper>
+      <Select onChange={onChange}>
+        <option value={FILTER_BY.ALL}>All Transactions</option>
+        <option value={FILTER_BY.SMALLEST}>10 Smallest Transactions</option>
+        <option value={FILTER_BY.BIGGEST}>10 Biggest Transactions</option>
+      </Select>
+    </SelectWrapper>
+  </>
 )
 
