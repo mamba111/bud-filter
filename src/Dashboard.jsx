@@ -26,13 +26,11 @@ const filterTransactions = (by, transactions) => {
       return [...transactions]
         .sort((a, b) => parseInt(a.amount.value, 10) - parseInt(b.amount.value, 10))
         .slice(0, 10)
-        .sort((b, a) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
     }
     case FILTER_BY.BIGGEST: {
       return [...transactions]
         .sort((b, a) => parseInt(a.amount.value, 10) - parseInt(b.amount.value, 10))
         .slice(0, 10)
-        .sort((b, a) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
     }
   }
 }

@@ -7,29 +7,50 @@ export const FILTER_BY = {
   BIGGEST: 'BIGGEST',
 }
 
-const SelectWrapper = styled.div`
-  text-align: center;
+const Wrapper = styled.div`
+  margin-top: 50px;
+  padding: 0 30px;
+`
+
+const Flex = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 
   @media (min-width: 768px) {
-    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 `
 
+const H2 = styled.h2`
+  font-size: 2rem;
+  margin: 0;
+`
+
 const Select = styled.select`
-  margin-top: 50px;
+  font-size: 1.5rem;
+  width: 300px;
+`
+
+const Option = styled.option`
+  font-size: 1.5rem;
 `
 
 export const Filter = ({ onChange }) => (
-  <>
-    <h2>Transaction History</h2>
+  <Wrapper>
+    <Flex>
+      <H2>Transaction History</H2>
 
-    <SelectWrapper>
       <Select onChange={onChange}>
-        <option value={FILTER_BY.ALL}>All Transactions</option>
-        <option value={FILTER_BY.SMALLEST}>10 Smallest Transactions</option>
-        <option value={FILTER_BY.BIGGEST}>10 Biggest Transactions</option>
+        <Option value={FILTER_BY.ALL}>All Transactions</Option>
+        <Option value={FILTER_BY.SMALLEST}>10 Smallest Transactions</Option>
+        <Option value={FILTER_BY.BIGGEST}>10 Biggest Transactions</Option>
       </Select>
-    </SelectWrapper>
-  </>
+    </Flex>
+  </Wrapper>
 )
 
