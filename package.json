@@ -1,7 +1,7 @@
 {
   "name": "Ayman",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Development",
   "main": "index.js",
   "scripts": {
     "build:watch": "esbuild ./src/index.js --bundle --outfile=./src/out.js --watch --loader:.js=jsx",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/mamba111/bud-filter.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ayman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mamba111/bud-filter/issues"

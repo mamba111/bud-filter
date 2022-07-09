@@ -9,6 +9,17 @@ const Button = styled.button`
   margin-top: 50px;
   padding: 10px 20px;
   text-decoration: none;
+  &:hover ${Eye} {
+    background: #242529;
+    transition: .3s;
+    color: #f2d33b;
+    opacity: 90%;
+    ${Eye} & {
+      path{
+        stroke: #f2d33b;
+        stroke-width: 0.8;
+      };
+  }
 `
 
 const Right = styled.div`

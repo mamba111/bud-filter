@@ -5,13 +5,17 @@ it('displays and filters transactions', () => {
 
   cy.contains('Transaction History', { matchCase: false })
 
-  cy.get('table').find('tr').should('have.length', 21)
+  cy.get('table').find('tr').should('have.length', 6)
+
+  cy.contains('Show More').click()
+
+  cy.get('table').find('tr').should('have.length', 11)
 
   cy.get('select').select('10 Smallest Transactions')
 
-  cy.get('table').find('tr').should('have.length', 11)
+  cy.get('table').find('tr').should('have.length', 6)
 
   cy.get('select').select('10 Biggest Transactions')
 
-  cy.get('table').find('tr').should('have.length', 11)
+  cy.get('table').find('tr').should('have.length', 6)
 })
