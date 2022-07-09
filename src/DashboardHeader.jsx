@@ -5,9 +5,6 @@ const Wrapper = styled.div`
   background-color: #242529;
   border-radius: 0 20px 20px 20px;
   color: white;
-  font-family: 'DM Sans', sans-serif;
-  font-style: normal;
-  font-weight: 500;
   padding: 30px;
   text-align: center;
 
@@ -46,7 +43,6 @@ const Account = styled.div`
 `
 
 const P = styled.p`
-  font-size: 1.1rem;
   margin: 0;
 `
 

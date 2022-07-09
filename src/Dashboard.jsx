@@ -6,14 +6,10 @@ import { Filter, FILTER_BY } from './Filter'
 import { DashboardHeader } from './DashboardHeader'
 import { TransactionsList } from './TransactionsList'
 
-const Container = styled.div`
-  width: 90%;
-  margin: auto;
-  font-size: 1.1rem;
-
-  @media (min-width: 768px) {
-    width: 70%;
-  }
+const Wrapper = styled.div`
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
 `
 
 const filterTransactions = (by, transactions) => {
@@ -36,16 +32,16 @@ const filterTransactions = (by, transactions) => {
 }
 
 export const Dashboard = ({ data, filterBy, onChangeFilter }) => {
-  if (data.status === STATUS.LOADING) return <Container>Loading..</Container>
-  if (data.status === STATUS.ERROR) return <Container>Error</Container>
+  if (data.status === STATUS.LOADING) return <span>Loading..</span>
+  if (data.status === STATUS.ERROR) return <span>Error</span>
 
   const filteredTransactions = filterTransactions(filterBy, data.json.transactions)
 
   return (
-    <>
-    <DashboardHeader provider={data.json.provider} balance={data.json.balance} />
-    <Filter onChange={onChangeFilter} />
-    <TransactionsList transactions={filteredTransactions} />
-    </>
+    <Wrapper>
+      <DashboardHeader provider={data.json.provider} balance={data.json.balance} />
+      <Filter onChange={onChangeFilter} />
+      <TransactionsList transactions={filteredTransactions} />
+    </Wrapper>
   )
 }
