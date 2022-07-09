@@ -1,0 +1,29 @@
+{
+  "name": "Ayman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:watch": "esbuild ./src/App.jsx --bundle --outfile=./src/out.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamba111/bud-filter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamba111/bud-filter.git"
+  },
+  "homepage": "https://github.com/mamba111/bud-filter.git",
+  "devDependencies": {
+    "esbuild": "^0.14.48"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.5"
+  }
+}
