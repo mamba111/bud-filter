@@ -28,11 +28,23 @@ const TableData = styled.td`
   padding: 20px 0;
 `
 
+const TableDataRight = styled(TableData)`
+  text-align: right;
+`
+
 const TableHeader = styled(TableData)`
   color: #ABACAF;
   font-size: 0.9rem;
   min-width: 200px;
   text-transform: uppercase;
+`
+
+const TableHeaderShort = styled(TableHeader)`
+  min-width: 100px;
+`
+
+const TableHeaderRight = styled(TableHeaderShort)`
+  text-align: right;
 `
 
 export const TransactionsList = ({ transactions }) => (
@@ -41,10 +53,10 @@ export const TransactionsList = ({ transactions }) => (
       <thead>
         <TableHeaderRow>
             <TableHeader>Receiver</TableHeader>
-            <TableHeader>Type</TableHeader>
-            <TableHeader>Date</TableHeader>
-            <TableHeader>Amount</TableHeader>
-            <TableHeader>Status</TableHeader>
+            <TableHeaderShort>Type</TableHeaderShort>
+            <TableHeaderShort>Date</TableHeaderShort>
+            <TableHeaderShort>Amount</TableHeaderShort>
+            <TableHeaderRight>Status</TableHeaderRight>
         </TableHeaderRow>
       </thead>
 
@@ -55,7 +67,7 @@ export const TransactionsList = ({ transactions }) => (
             <TableData>{transaction.category_title}</TableData>
             <TableData><FormattedDate date={transaction.date} /></TableData>
             <TableData><Amount amount={transaction.amount} /></TableData>
-            <TableData><Tag amount={transaction.amount.value} /></TableData>
+            <TableDataRight><Tag amount={transaction.amount.value} /></TableDataRight>
           </tr>
         ))}
       </tbody>

@@ -5,11 +5,13 @@ import { STATUS } from './Api'
 import { Filter, FILTER_BY } from './Filter'
 import { DashboardHeader } from './DashboardHeader'
 import { TransactionsList } from './TransactionsList'
+import { Paginated } from './Paginated'
 
 const Wrapper = styled.div`
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
+  padding-bottom: 30px;
 `
 
 const filterTransactions = (by, transactions) => {
@@ -31,7 +33,14 @@ const filterTransactions = (by, transactions) => {
   }
 }
 
-export const Dashboard = ({ data, filterBy, onChangeFilter }) => {
+export const Dashboard = ({ data }) => {
+  const [filterBy, setFilterBy] = React.useState(FILTER_BY.ALL)
+  const [pageNumber, setPageNumber] = React.useState(0)
+  const onChangeFilter = (event) => {
+    setFilterBy(event.target.value)
+    setPageNumber(0)
+  }
+
   if (data.status === STATUS.LOADING) return <span>Loading..</span>
   if (data.status === STATUS.ERROR) return <span>Error</span>
 
@@ -41,7 +50,7 @@ export const Dashboard = ({ data, filterBy, onChangeFilter }) => {
     <Wrapper>
       <DashboardHeader provider={data.json.provider} balance={data.json.balance} />
       <Filter onChange={onChangeFilter} />
-      <TransactionsList transactions={filteredTransactions} />
+      <Paginated pageNumber={pageNumber} setPageNumber={setPageNumber} transactions={filteredTransactions} render={(transactions) => <TransactionsList transactions={transactions} />} />
     </Wrapper>
   )
 }
