@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build:watch": "esbuild ./src/index.js --bundle --outfile=./src/out.js --watch --loader:.js=jsx",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "cypress open",
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mamba111/bud-filter"
+    "url": "git+https://github.com/mamba111/bud-filter.git"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/mamba111/bud-filter#readme",
   "devDependencies": {
+    "cypress": "^10.3.0",
     "esbuild": "^0.14.48"
   },
   "dependencies": {
