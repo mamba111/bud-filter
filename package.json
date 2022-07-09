@@ -4,20 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:watch": "esbuild ./src/App.jsx --bundle --outfile=./src/out.js --watch",
+    "build:watch": "esbuild ./src/index.js --bundle --outfile=./src/out.js --watch --loader:.js=jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mamba111/bud-filter.git"
+    "url": "git+https://github.com/mamba111/bud-filter"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mamba111/bud-filter.git"
+    "url": "https://github.com/mamba111/bud-filter/issues"
   },
-  "homepage": "https://github.com/mamba111/bud-filter.git",
+  "homepage": "https://github.com/mamba111/bud-filter#readme",
   "devDependencies": {
     "esbuild": "^0.14.48"
   },
